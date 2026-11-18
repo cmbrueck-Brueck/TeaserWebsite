@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HSR Teaser Website</title>
+  <meta
+    name="description"
+    content="Free, transparent healthcare pricing data for shoppable, non-emergency procedures. Developed at The Difference Engine at Arizona State University."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Main Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="HSR Home">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="20" height="20" rx="6" fill="#0D9488" />
+            <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">HSR<span class="brand-tag">BETA</span></span>
+          <span class="brand-sub">Open Healthcare Price Lookup</span>
+        </div>
+      </a>
+
+      <button
+        class="mobile-nav-toggle"
+        id="mobileNavToggle"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <a href="#preview">Sample Price Tool</a>
+        <a href="#mission">Why the 35% Matters</a>
+        <a href="#roadmap">Launch Roadmap</a>
+        <a href="#waitlist" class="btn btn-primary btn-sm">Get Early Access</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow-pill">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Building Free Healthcare Price Transparency
+          </div>
+          <h1>Know what healthcare actually costs <em>before</em> you go.</h1>
+          <p class="hero-lead">
+            Roughly <strong>35% of all healthcare spending</strong> goes toward shoppable, non-emergency procedures—yet prices for the exact same scan or surgery can vary by over 400% within the same city. We are turning complex hospital and payer data into a free, easy-to-use public tool.
+          </p>
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn btn-primary btn-lg">Join the Early Access List</a>
+            <a href="#preview" class="btn btn-secondary btn-lg">Try Interactive Price Preview</a>
+          </div>
+          <p class="hero-microcopy">
+            No paywalls. No accounts required to search. Built for patients, families, and researchers.
+          </p>
+        </div>
+
+        <!-- Hero Right: Live Snapshot Card -->
+        <div class="hero-visual">
+          <div class="snapshot-card">
+            <div class="snapshot-header">
+              <div>
+                <span class="snapshot-label">SAMPLE LOCAL PRICE GAP</span>
+                <h3>Knee MRI (Without Contrast)</h3>
+                <span class="cpt-pill">CPT Code 73721 • Outpatient</span>
+              </div>
+              <span class="savings-pill">Save up to $1,725</span>
+            </div>
+
+            <div class="snapshot-bars">
+              <div class="bar-row">
+                <div class="bar-meta">
+                  <span>Independent Imaging Center</span>
+                  <strong class="price-low">$425</strong>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill fill-low" style="width: 20%;"></div>
+                </div>
+                <span class="bar-sub">Cash / Self-Pay Rate • Negotiated Avg: $540</span>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-meta">
+                  <span>Regional Medical Clinic</span>
+                  <strong class="price-mid">$1,120</strong>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill fill-mid" style="width: 52%;"></div>
+                </div>
+                <span class="bar-sub">Cash / Self-Pay Rate • Negotiated Avg: $1,240</span>
+              </div>
+
+              <div class="bar-row">
+                <div class="bar-meta">
+                  <span>Major Hospital Outpatient Dept.</span>
+                  <strong class="price-high">$2,150</strong>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill fill-high" style="width: 100%;"></div>
+                </div>
+                <span class="bar-sub">Includes hospital facility fees • Negotiated Avg: $2,380</span>
+              </div>
+            </div>
+
+            <div class="snapshot-footer">
+              <span>Illustrative data modeled from CMS hospital &amp; payer rate disclosures.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Metrics Strip -->
+      <div class="container">
+        <div class="metrics-strip">
+          <div class="metric-item">
+            <span class="metric-number">~35%</span>
+            <span class="metric-desc">of total U.S. healthcare spending is on shoppable, non-emergency care</span>
+          </div>
+          <div class="metric-divider" aria-hidden="true"></div>
+          <div class="metric-item">
+            <span class="metric-number">$0</span>
+            <span class="metric-desc">cost to consumers—100% free public price lookup with zero hidden fees</span>
+          </div>
+          <div class="metric-divider" aria-hidden="true"></div>
+          <div class="metric-item">
+            <span class="metric-number">3x–5x</span>
+            <span class="metric-desc">typical price variation for identical procedures within the same metro area</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Sample Price Variance Widget -->
+    <section class="section section-alt" id="preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">INTERACTIVE PROTOTYPE PREVIEW</span>
+          <h2>See how procedure prices compare across facilities</h2>
+          <p>
+            Select a common shoppable procedure below to preview how our upcoming lookup engine translates raw medical billing codes into clear, side-by-side price comparisons.
+          </p>
+        </div>
+
+        <!-- Procedure Selector Pills -->
+        <div class="procedure-tabs" role="tablist" aria-label="Select a sample procedure">
+          <button class="proc-tab active" data-proc="mri" role="tab" aria-selected="true">
+            Knee MRI
+          </button>
+          <button class="proc-tab" data-proc="colonoscopy" role="tab" aria-selected="false">
+            Screening Colonoscopy
+          </button>
+          <button class="proc-tab" data-proc="mammogram" role="tab" aria-selected="false">
+            Diagnostic Mammogram
+          </button>
+          <button class="proc-tab" data-proc="endoscopy" role="tab" aria-selected="false">
+            Upper GI Endoscopy
+          </button>
+          <button class="proc-tab" data-proc="labs" role="tab" aria-selected="false">
+            Metabolic Lab Panel
+          </button>
+        </div>
+
+        <!-- Dynamic Procedure Explorer Card -->
+        <div class="explorer-card" id="explorerCard">
+          <div class="explorer-top">
+            <div>
+              <div class="explorer-badges">
+                <span class="badge-category" id="procCategory">Diagnostic Imaging</span>
+                <span class="badge-cpt" id="procCpt">CPT 73721</span>
+              </div>
+              <h3 id="procTitle">Knee MRI (Without Contrast)</h3>
+              <p class="proc-plain-desc" id="procDesc">
+                A non-invasive magnetic resonance scan used to evaluate knee ligaments, cartilage, tendons, and joint pain without radiation.
+              </p>
+            </div>
+
+            <!-- Rate Type Filter Toggle -->
+            <div class="rate-toggle" role="group" aria-label="Filter pricing view">
+              <button class="toggle-btn active" data-rate="all">All Rates</button>
+              <button class="toggle-btn" data-rate="cash">Cash / Self-Pay</button>
+              <button class="toggle-btn" data-rate="insurance">Insurance Avg</button>
+            </div>
+          </div>
+
+          <!-- Visual Price Spectrum Bar (Inspired by FAIR Health Consumer) -->
+          <div class="spectrum-box">
+            <div class="spectrum-header">
+              <span class="spectrum-title">Local Fair Price Spectrum</span>
+              <span class="spectrum-savings" id="procSavingsHighlight">Potential Savings: Up to $1,725</span>
+            </div>
+            <div class="spectrum-bar-wrapper">
+              <div class="spectrum-gradient"></div>
+              <div class="spectrum-markers">
+                <div class="marker marker-low">
+                  <span class="marker-dot"></span>
+                  <span class="marker-label">Low / Fair Cash</span>
+                  <strong id="specLow">$425</strong>
+                </div>
+                <div class="marker marker-mid">
+                  <span class="marker-dot"></span>
+                  <span class="marker-label">Regional Median</span>
+                  <strong id="specMid">$1,180</strong>
+                </div>
+                <div class="marker marker-high">
+                  <span class="marker-dot"></span>
+                  <span class="marker-label">High Hospital Rate</span>
+                  <strong id="specHigh">$2,150</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side-by-Side Facility Cards (Inspired by Turquoise Health & MDsave) -->
+          <div class="facility-grid" id="facilityGrid">
+            <!-- Populated dynamically by script.js -->
+          </div>
+
+          <div class="explorer-disclaimer">
+            <span>
+              <strong>Note:</strong> Figures shown above are illustrative sample estimates demonstrating how facility type impacts shoppable procedure pricing. Live local facility rates will launch in Phase 2.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Shoppable Care Matters (35% Mission Section) -->
+    <section class="section" id="mission">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">WHY THIS MATTERS</span>
+          <h2>Empowering consumers across the 35% of care you can plan ahead</h2>
+          <p>
+            Unlike emergency room visits, shoppable healthcare services are scheduled in advance—giving patients real leverage when price information is transparent.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <h3>1. Plain-English Procedure Search</h3>
+            <p>
+              Patients shouldn’t need to memorize 5-digit CPT billing codes to understand their care. We translate clinical procedures into everyday language with clear breakdowns of what is included.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3>2. Cash &amp; Insurance Side-by-Side</h3>
+            <p>
+              Sometimes a provider’s upfront self-pay price is lower than an insured deductible rate. Comparing cash prices alongside payer-negotiated rates helps patients choose the smartest financial option.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>3. 100% Independent & Unbiased</h3>
+            <p>
+              We don’t sell patient leads, take referral commissions, or hide prices behind paywalls. Our goal is strictly public-interest transparency so you can compare local options with confidence.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Roadmap Section -->
+    <section class="section section-dark" id="roadmap">
+      <div class="container">
+        <div class="section-header section-header-light">
+          <span class="section-eyebrow eyebrow-gold">PROJECT ROADMAP</span>
+          <h2>From data aggregation to open consumer search</h2>
+          <p>
+            We are actively collaborating with healthcare data providers and researchers to verify payer and hospital rate files ahead of our public release.
+          </p>
+        </div>
+
+        <div class="roadmap-grid">
+          <div class="roadmap-step active-step">
+            <div class="step-badge">PHASE 1 • IN PROGRESS</div>
+            <h3>Data Partnerships &amp; Teaser Launch</h3>
+            <p>
+              Sourcing and validating hospital machine-readable files (MRFs) and commercial payer rate datasets while gathering feedback from early users and health policy partners.
+            </p>
+          </div>
+
+          <div class="roadmap-step">
+            <div class="step-badge">PHASE 2 • UPCOMING</div>
+            <h3>Public Shoppable Care Search Portal</h3>
+            <p>
+              Launching free ZIP-code lookup across top shoppable procedures—imaging, outpatient surgeries, endoscopies, and lab tests—with facility comparisons.
+            </p>
+          </div>
+
+          <div class="roadmap-step">
+            <div class="step-badge">PHASE 3 • FUTURE</div>
+            <h3>Expanded Coverage &amp; Open Data</h3>
+            <p>
+              Scaling regional coverage and publishing clean, documented summary benchmarks for journalists, researchers, and community health advocates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Early Access & Data Partner Sign-Up Section -->
+    <section class="section" id="waitlist">
+      <div class="container">
+        <div class="waitlist-box">
+          <div class="waitlist-info">
+            <span class="section-eyebrow">STAY CONNECTED</span>
+            <h2>Get notified when free price lookup goes live</h2>
+            <p>
+              Whether you are a patient preparing for an upcoming procedure, a healthcare data provider, or a researcher interested in collaborating with our ASU Difference Engine team, we would love to hear from you.
+            </p>
+            <ul class="waitlist-perks">
+              <li>First access when local procedure search launches</li>
+              <li>Updates on newly integrated hospital and payer datasets</li>
+              <li>Direct connection with our Difference Engine project fellow</li>
+            </ul>
+          </div>
+
+          <div class="waitlist-form-wrap">
+            <!--
+              NOTE FOR DEPLOYMENT:
+              To connect this form to a live inbox without a backend server,
+              replace the `action="#"` attribute with a free Formspree endpoint
+              (e.g., action="https://formspree.io/f/your-form-id" method="POST")
+              or add `data-netlify="true"` if hosting on Netlify.
+            -->
+            <form id="earlyAccessForm" class="signup-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="name"
+                  placeholder="Alex Rivera"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="alex@example.com"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="role">I am interested as a...</label>
+                  <select id="role" name="role" required>
+                    <option value="consumer">Healthcare Consumer / Patient</option>
+                    <option value="data-partner">Healthcare Data Company / Partner</option>
+                    <option value="researcher">Policy Researcher / Journalist</option>
+                    <option value="asu">ASU Student / Faculty / Staff</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="zipCode">ZIP Code <span class="optional">(Optional)</span></label>
+                  <input
+                    type="text"
+                    id="zipCode"
+                    name="zip"
+                    placeholder="85281"
+                    maxlength="10"
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                Request Early Access
+              </button>
+
+              <p class="form-privacy">
+                We respect your privacy. Your email will only be used for project launch updates and collaboration inquiries.
+              </p>
+            </form>
+
+            <!-- Confirmation Message Shown on Submit -->
+            <div class="form-success" id="formSuccess" hidden>
+              <div class="success-icon" aria-hidden="true">✓</div>
+              <h3>You're on the list!</h3>
+              <p id="successMessage">
+                Thank you for joining our early access community. We’ll reach out as soon as the price lookup portal is ready for testing.
+              </p>
+              <button type="button" class="btn btn-secondary btn-sm" id="resetFormBtn">
+                Register another email
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Institutional Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="6" fill="#0D9488" />
+              <path d="M12 7V17M7 12H17" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <span class="brand-name footer-brand-name">HSR</span>
+        </div>
+        <p class="footer-mission">
+          An open healthcare price transparency initiative developed by Munir Moon, (have details about you here)
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#preview">Sample Price Comparison</a></li>
+          <li><a href="#mission">Why Shoppable Care</a></li>
+          <li><a href="#roadmap">Project Roadmap</a></li>
+          <li><a href="#waitlist">Early Access &amp; Data Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-disclaimer">
+        <h4>Data &amp; Medical Disclaimer</h4>
+        <p>
+          All pricing figures shown on this teaser website are illustrative benchmarks intended to demonstrate price variation for shoppable services. Final patient out-of-pocket costs depend on individual insurance deductibles, coinsurance, and provider billing. Always confirm exact estimates directly with your healthcare provider and health plan.
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 HSR Price Transparency Initiative</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
